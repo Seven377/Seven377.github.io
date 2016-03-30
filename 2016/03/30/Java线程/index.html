@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,多线程," />
 
 
 
@@ -57,16 +57,30 @@
 
 
 
-<meta name="description" content="stay hungry stay foolish">
+<meta name="description" content="进程进程是处于运行过程中的程序，并且具有一定的独立功能，进程是系统进行资源分配和调度的一个独立单位。它主要包含以下三个特征：
+
+进程拥有自己独立的资源，每一个进程都有自己私有的地址空间，在没有经过进程本身允许的情况下，一个用户进程是不能直接访问其他进程的地址空间。
+进程是一个正在系统中活动的指令集合，它具有自己的生命周期和各种不同的形态。
+多个进程可以在单个处理器上并发执行，互相之间不受影响。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java线程">
 <meta property="og:url" content="http://yoursite.com/2016/03/30/Java线程/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="stay hungry stay foolish">
-<meta property="og:updated_time" content="2016-03-30T06:23:57.582Z">
+<meta property="og:description" content="进程进程是处于运行过程中的程序，并且具有一定的独立功能，进程是系统进行资源分配和调度的一个独立单位。它主要包含以下三个特征：
+
+进程拥有自己独立的资源，每一个进程都有自己私有的地址空间，在没有经过进程本身允许的情况下，一个用户进程是不能直接访问其他进程的地址空间。
+进程是一个正在系统中活动的指令集合，它具有自己的生命周期和各种不同的形态。
+多个进程可以在单个处理器上并发执行，互相之间不受影响。">
+<meta property="og:image" content="http://7xseg8.com1.z0.glb.clouddn.com/16-3-30/90218617.jpg">
+<meta property="og:updated_time" content="2016-03-30T13:18:14.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程">
-<meta name="twitter:description" content="stay hungry stay foolish">
+<meta name="twitter:description" content="进程进程是处于运行过程中的程序，并且具有一定的独立功能，进程是系统进行资源分配和调度的一个独立单位。它主要包含以下三个特征：
+
+进程拥有自己独立的资源，每一个进程都有自己私有的地址空间，在没有经过进程本身允许的情况下，一个用户进程是不能直接访问其他进程的地址空间。
+进程是一个正在系统中活动的指令集合，它具有自己的生命周期和各种不同的形态。
+多个进程可以在单个处理器上并发执行，互相之间不受影响。">
+<meta name="twitter:image" content="http://7xseg8.com1.z0.glb.clouddn.com/16-3-30/90218617.jpg">
 
 
 
@@ -242,6 +256,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -270,7 +303,26 @@
       
 
       
-        
+        <h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程是处于运行过程中的程序，并且具有一定的独立功能，进程是系统进行资源分配和调度的一个独立单位。它主要包含以下三个特征：</p>
+<ul>
+<li>进程拥有自己独立的资源，每一个进程都有自己私有的地址空间，在没有经过进程本身允许的情况下，一个用户进程是不能直接访问其他进程的地址空间。</li>
+<li>进程是一个正在系统中活动的指令集合，它具有自己的生命周期和各种不同的形态。</li>
+<li>多个进程可以在单个处理器上并发执行，互相之间不受影响。</li>
+</ul>
+<a id="more"></a>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>线程是进程的组成部分，一个进程可以拥有多个线程，一个线程必须拥有一个父进程。线程可以拥有自己的堆栈、自己的程序计数器和自己的局部变量，但不拥有系统资源，它与父进程的其他线程共享改进程所拥有的全部资源。线程的执行是抢占式的，也就是说当前运行的线程在任何时候都可能被挂起，以便另一个线程可以运行。<br>线程比进程具有更高的性能，这是由于同一个进程的线程都有共性——多个线程共享同一个进程虚拟空间。线程共享的环境包括：进程代码段，进程的共有数据等，利用这些共享的数据，线程之间很容易实现通信。</p>
+<h3 id="Java多线程实现"><a href="#Java多线程实现" class="headerlink" title="Java多线程实现"></a>Java多线程实现</h3><h4 id="继承Thread类创建线程类"><a href="#继承Thread类创建线程类" class="headerlink" title="继承Thread类创建线程类"></a>继承Thread类创建线程类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class MyThread extends <span class="title">Thread</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> <span class="comment">//重写run()方法，该方法就是线程执行体</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(; i &lt; <span class="number">100</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">// 当线程继承Thread类时，直接使用this即可获取当前线程，getName()返回线程名</span></span><br><span class="line">			System.out.println(<span class="keyword">this</span>.getName() + <span class="string">": "</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		System.out.println(Thread.currentThread.getName());</span><br><span class="line">		MyThread t1 = <span class="keyword">new</span> MyThread();</span><br><span class="line">		MyThread t2 = <span class="keyword">new</span> MyThread();</span><br><span class="line">		t1.start(); <span class="comment">//使用start启动线程，而不是run方法。</span></span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用继承Thread类的方法来创建线程类时，多个线程之间无法共享线程类的实例变量。</p>
+<h4 id="实现Runnable接口创建线程类"><a href="#实现Runnable接口创建线程类" class="headerlink" title="实现Runnable接口创建线程类"></a>实现Runnable接口创建线程类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class MyRunnable implements <span class="title">Runnable</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> <span class="comment">//重写run()方法，该方法就是线程执行体</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(; i &lt; <span class="number">100</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//此时要获取当前线程只能通过Thread.currentThread()方法			</span></span><br><span class="line">			System.out.println(Thread.currentThread().getName() + <span class="string">": "</span> + i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		System.out.println(Thread.currentThread.getName());</span><br><span class="line">		MyRunnable r1 = <span class="keyword">new</span> MyRunnable();</span><br><span class="line">		MyRunnable r2 = <span class="keyword">new</span> MyRunnable();</span><br><span class="line">		<span class="comment">//MyRunnable的实例仅仅作为Thread对象的target，MyRunnable里面的run()法仅作为线程执行体</span></span><br><span class="line">		<span class="comment">//实际的线程对象依然是Thread实例，知识该Thread线程负责执行其target的run()方法</span></span><br><span class="line">		<span class="keyword">new</span> Thread(r1).start();</span><br><span class="line">		<span class="keyword">new</span> Thread(r2).start();</span><br><span class="line">		<span class="comment">/*</span><br><span class="line">		MyRunnable r = new MyRunnable();</span><br><span class="line">		//两个线程可以共用一个target从而实现线程类实例变量的共享</span><br><span class="line">		new Thread(r).start();</span><br><span class="line">		new Thread(r).start();</span><br><span class="line">		/*</span><br><span class="line">	&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="线程的几种状态"><a href="#线程的几种状态" class="headerlink" title="线程的几种状态"></a>线程的几种状态</h3><ul>
+<li>创建状态：创建好了一个多线程的对象</li>
+<li>就绪状态：调用了strart()方法，等待CPU进行调度</li>
+<li>运行状态：执行run()方法</li>
+<li>阻塞状态：暂时停止执行，可能将资源交给其他线程使用</li>
+<li>终止状态（死亡状态）：线程销毁</li>
+</ul>
+<p>下图为线程状态转换图<br><img src="http://7xseg8.com1.z0.glb.clouddn.com/16-3-30/90218617.jpg" alt="线程状态转换图"></p>
+
       
     </div>
 
@@ -281,6 +333,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+            <a href="/tags/多线程/" rel="tag">#多线程</a>
+          
+        </div>
       
 
       
@@ -382,7 +442,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -447,7 +507,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程"><span class="nav-number">1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程"><span class="nav-number">2.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程实现"><span class="nav-number">3.</span> <span class="nav-text">Java多线程实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#继承Thread类创建线程类"><span class="nav-number">3.1.</span> <span class="nav-text">继承Thread类创建线程类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现Runnable接口创建线程类"><span class="nav-number">3.2.</span> <span class="nav-text">实现Runnable接口创建线程类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的几种状态"><span class="nav-number">4.</span> <span class="nav-text">线程的几种状态</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
