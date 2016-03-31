@@ -1513,7 +1513,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8c44f2;
+  background: #be9a55;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2052,6 +2052,8 @@ a.search-result {
 }
 .category-all-page .category-list-item {
   margin: 5px 10px;
+  display: inline;
+  font-size: 20px;
 }
 .category-all-page .category-list-count {
   color: #bbb;
