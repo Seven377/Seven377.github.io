@@ -67,7 +67,7 @@ TCP协议TCP协议提供可靠的数据传输服务的规则，IP协议可以进
 TCP协议TCP协议提供可靠的数据传输服务的规则，IP协议可以进行数据包的分割和组装，但是通过它不能清楚的了解数据包是否顺利的发送给目标计算机，TCP协议将数据包成功发送给目标计算机时，会要求发送一个确认，如果在某个时间内没有收到确认，TCP将重新发送数">
 <meta property="og:image" content="http://blog.chinaunix.net/attachment/201304/8/22312037_1365405910EROI.png">
 <meta property="og:image" content="http://blog.chinaunix.net/attachment/201304/9/22312037_1365503104wDR0.png">
-<meta property="og:updated_time" content="2016-03-29T03:14:12.740Z">
+<meta property="og:updated_time" content="2016-03-31T07:50:21.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP/IP协议复习">
 <meta name="twitter:description" content="IP 协议规定Internet数据传输的基本单元和格式的协议，网络中传输的信息都要遵守IP协议指定的信息传输的大小和格式，定义了数据的路由选择。
@@ -322,6 +322,9 @@ TCP协议TCP协议提供可靠的数据传输服务的规则，IP协议可以进
 <li>Server收到数据包后由标志位SYN=1知道Client请求建立连接，Server将标志位SYN和ACK都置为1，ack=J+1，随机产生一个值seq=K，并将该数据包发送给Client以确认连接请求，Server进入SYN_RCVD状态。</li>
 <li>Client收到确认后，检查ack是否为J+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=K+1，并将该数据包发送给Server，Server检查ack是否为K+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client与Server之间可以开始传输数据了。</li>
 </ol>
+<blockquote>
+<p>小白例子：<br>第一次握手（客户端）：你在吗？<br>第二次握手（服务器）：我在。<br>第三次握手（客户端）：哦，我知道你在了。</p>
+</blockquote>
 <h4 id="四次握手"><a href="#四次握手" class="headerlink" title="四次握手"></a>四次握手</h4><p>断开一个TCP连接时，需要客户端和服务端总共发送4个包以确认连接的断开，如下图所示：<br><img src="http://blog.chinaunix.net/attachment/201304/9/22312037_1365503104wDR0.png" alt="Alt text"></p>
 <ol>
 <li>第一次挥手：Client发送一个FIN，用来关闭Client到Server的数据传送，Client进入FIN_WAIT_1状态。</li>
@@ -329,6 +332,9 @@ TCP协议TCP协议提供可靠的数据传输服务的规则，IP协议可以进
 <li>第三次挥手：Server发送一个FIN，用来关闭Server到Client的数据传送，Server进入LAST_ACK状态。</li>
 <li>第四次挥手：Client收到FIN后，Client进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+1，Server进入CLOSED状态，完成四次挥手。</li>
 </ol>
+<blockquote>
+<p>小白例子：<br>第一次握手（客户端）：我有事要走了<br>第二次握手（服务器）：好的<br>第三次握手（服务器）：我也走了<br>第四次握手（客户端）：好的</p>
+</blockquote>
 <h5 id="为什么建立连接是三次握手，而关闭连接却是四次挥手呢？"><a href="#为什么建立连接是三次握手，而关闭连接却是四次挥手呢？" class="headerlink" title="为什么建立连接是三次握手，而关闭连接却是四次挥手呢？"></a>为什么建立连接是三次握手，而关闭连接却是四次挥手呢？</h5><p>这是因为服务端在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。而关闭连接时，当收到对方的FIN报文时，仅仅表示对方不再发送数据了但是还能接收数据，己方也未必全部数据都发送给对方了，所以己方可以立即close，也可以发送一些数据给对方后，再发送FIN报文给对方来表示同意现在关闭连接，因此，己方ACK和FIN一般都会分开发送。</p>
 
       
