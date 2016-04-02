@@ -305,15 +305,7 @@
       
         
           <h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><p>集合类和数组不一样，数组元素既可以保存基本类型的值，也可以是对象，但是集合里只能保存对象，Java的集合类主要由两个接口派生而出：Collection和Map</p>
-<h3 id="集合遍历："><a href="#集合遍历：" class="headerlink" title="集合遍历："></a>集合遍历：</h3><p>可以通过Iterator遍历集合元素，它仅仅用于遍历集合，本身没有盛庄对象的能力，它依赖于Collection对象，若有一个Iterator对象，必然有一个与之关联的Collection对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Collection c = <span class="keyword">new</span> ArrayList();</span><br><span class="line">Iterator it = c.iterator();</span><br></pre></td></tr></table></figure></p>
-<p>可以使用foreach遍历集合<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Collection c = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="keyword">for</span>(Object obj : c)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 操作</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h3><p>Set不允许包含重复元素</p>
-<h4 id="HashSet："><a href="#HashSet：" class="headerlink" title="HashSet："></a>HashSet：</h4><ul>
-<li>元素无序(无序是指不能元素的排列顺序与添加顺序不同)</li>
-<li>不是同步的，多线程访问时需要通过代码来保证线程同步</li>
-<li>集合元素可以是null</li>
-<li>HashSet集合判断两个元素相等的标注是两个对象通过equal()方法比较相等，并且两个对象的hashCode()方法返回值也相等。</li>
-</ul>
+<h3 id="集合遍历："><a href="#集合遍历：" class="headerlink" title="集合遍历："></a>集合遍历：</h3><p>可以通过Iterator遍历集合元素，它仅仅用于遍历集合，本身没有盛庄对象的能力，它依赖于Collection对象，若有一个Iterator对象，必然有一个与之关联的Collection对象<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/02/Java集合/#more" rel="contents">
               阅读全文 &raquo;
