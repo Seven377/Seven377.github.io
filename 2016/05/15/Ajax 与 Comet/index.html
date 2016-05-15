@@ -58,21 +58,21 @@
 
 
 <meta name="description" content="Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。
-XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
-IE7+、Firefox、Opera、Chrom">
+###1  XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
+IE7+、Firefox、Opera">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax 与 Comet">
 <meta property="og:url" content="http://yoursite.com/2016/05/15/Ajax 与 Comet/index.html">
 <meta property="og:site_name" content="Seven">
 <meta property="og:description" content="Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。
-XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
-IE7+、Firefox、Opera、Chrom">
-<meta property="og:updated_time" content="2016-05-15T08:41:31.036Z">
+###1  XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
+IE7+、Firefox、Opera">
+<meta property="og:updated_time" content="2016-05-15T14:30:14.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax 与 Comet">
 <meta name="twitter:description" content="Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。
-XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
-IE7+、Firefox、Opera、Chrom">
+###1  XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
+IE7+、Firefox、Opera">
 
 
 
@@ -306,8 +306,8 @@ IE7+、Firefox、Opera、Chrom">
 
       
         <p>Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。</p>
-<h3 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h3><p>XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。</p>
-<p>IE7+、Firefox、Opera、Chrome和 Safari 都支持原生的 XHR 对象。可通过以下方式来创建 XHR 对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure></p>
+<p>###1  XMLHttpRequest 对象<br>XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。</p>
+<p>IE7+、Firefox、Opera、Chrome和 Safari 都支持原生的 XHR 对象。可通过以下方式来创建 XHR 对象<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure></p>
 <p>创建好对象之后，通过 open( ) 方法来启动一个请求以备发送，通过 send( ) 方法来发送特定的请求。</p>
 <p>open( ) 方法接受三个参数：要发送的请求的类型（’’get”、”post”等）、请求的URL 和 表示是否异步发送请求的布尔值。</p>
 <p>send( ) 方法接受一个参数，即要作为请求主题发送的数据。如果不需要通过请求主题发送数据，则必须传入 null。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.txt"</span>,<span class="literal">false</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
@@ -316,17 +316,18 @@ IE7+、Firefox、Opera、Chrom">
 <li><strong>responseText</strong> ：作为响应主体被返回的文本；</li>
 <li><strong>responseXML</strong> </li>
 <li><strong>status</strong> ：响应的 HTTP 状态；</li>
-<li><strong>statusText</strong> ：HTTP 状态的说明。<br>状态代码为 200 代表成功，为 304 表示请求的资源并没有被修改，可以直接使用浏览器中缓存的版本。一般情况下，建议通过检测  status 来决定下一步的操作，不要依赖于 statusText。</li>
+<li><strong>statusText</strong> ：HTTP 状态的说明。</li>
 </ul>
+<p>状态代码为 200 代表成功，为 304 表示请求的资源并没有被修改，可以直接使用浏览器中缓存的版本。一般情况下，建议通过检测  status 来决定下一步的操作，不要依赖于 statusText。</p>
 <p>如果open( ) 方法的第三个参数为 true，则代表是<strong>异步</strong>请求，JavaScript 代码可以继续执行而不用等待响应。 此时，可以通过检测 XHR 对象的 readyState 属性的值来查看请求/响应过程的当前活动阶段。 只要 readyState 属性的值由一个值变为另一个值，都会触发一次 readystatechange 事件。</p>
 <p>需要注意的是：<strong>必须在调用 open( ) 之前指定 onreadystatechange 事件处理程序才能确保跨浏览器兼容性</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>((xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span>)&#123;</span><br><span class="line">			alert(xhr.responseText);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			alert(<span class="string">"Request was unsuccessful: "</span> + xhr.status);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.txt"</span>,<span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
-<h3 id="XMLHttpRequest-2级"><a href="#XMLHttpRequest-2级" class="headerlink" title="XMLHttpRequest 2级"></a>XMLHttpRequest 2级</h3><p>XMLHttpRequest 1级只是把已有的 XHR 对象的实现细节描述了出来，而 XMLHttpRequest 2级则进一步发展了 XHR。</p>
+<h3 id="2-XMLHttpRequest-2级"><a href="#2-XMLHttpRequest-2级" class="headerlink" title="2 XMLHttpRequest 2级"></a>2 XMLHttpRequest 2级</h3><p>XMLHttpRequest 1级只是把已有的 XHR 对象的实现细节描述了出来，而 XMLHttpRequest 2级则进一步发展了 XHR。</p>
 <ul>
 <li><strong>FormData</strong>：为序列化表单以及创建与表单格式相同的数据提供了遍历。</li>
 <li><strong>超时设定</strong>：IE8 为 XHR 对象添加了一个 timeout 属性，表示请求在等待响应多少毫秒之后就终止。</li>
 <li><strong>overrideMimeType( )方法</strong>：Firefox 最早引入了 overrideMimeType( )方法，用于重写 XHR 响应的 MIME 类型。</li>
 </ul>
-<h3 id="进度事件"><a href="#进度事件" class="headerlink" title="进度事件"></a>进度事件</h3><p>Progress Events 规范是 W3C 的一个工作草案，定义了与客户端服务器通信有关的事件。这些事件最早其实只针对 XHR 操作，但目前也被其他 API 借鉴。有以下 6 个进度事件。</p>
+<h3 id="3-进度事件"><a href="#3-进度事件" class="headerlink" title="3 进度事件"></a>3 进度事件</h3><p>Progress Events 规范是 W3C 的一个工作草案，定义了与客户端服务器通信有关的事件。这些事件最早其实只针对 XHR 操作，但目前也被其他 API 借鉴。有以下 6 个进度事件。</p>
 <ul>
 <li><strong>loadstart</strong>：在接收到响应数据的第一个字节时触发；</li>
 <li><strong>progress</strong>：在接受响应期间持续不断地触发；</li>
@@ -335,19 +336,57 @@ IE7+、Firefox、Opera、Chrom">
 <li><strong>load</strong>：在接收到完整的响应数据时触发；</li>
 <li><strong>loadend</strong>：在通信完成或者触发 error、abort 或者 load 事件后触发（目前还没有浏览器支持loadend 事件）。</li>
 </ul>
-<h3 id="跨源资源共享"><a href="#跨源资源共享" class="headerlink" title="跨源资源共享"></a>跨源资源共享</h3><p>默认情况下， XHR 对象只能访问与包含它的页面位于同一个域中的资源。这种安全策略可以预防某些恶意行为，但实现合理的跨域请求也至关重要。</p>
+<h3 id="4-跨源资源共享"><a href="#4-跨源资源共享" class="headerlink" title="4 跨源资源共享"></a>4 跨源资源共享</h3><p>默认情况下， XHR 对象只能访问与包含它的页面位于同一个域中的资源。这种安全策略可以预防某些恶意行为，但实现合理的跨域请求也至关重要。</p>
 <p>CORS （Cross- Origin Resource Sharing, 跨源资源共享）定义了在必须访问跨源资源时，浏览器与服务器应该如何沟通。CORS 背后的基本思想，就是利用自定义的 HTTP 头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</p>
 <p>如果没有相应的头部，或者有这个头部但是源信息不匹配，浏览器就会驳回请求。注意，<strong>请求和响应都不包含 cookie 信息</strong>。</p>
-<h4 id="IE-对-CORS-的实现"><a href="#IE-对-CORS-的实现" class="headerlink" title="IE 对 CORS 的实现"></a>IE 对 CORS 的实现</h4><p>微软在 IE8 中引入了 XDR （XDomainRequest）类型。<br>XDR 对象的使用方法与 XHR 对象非常相似。<strong>与XHR对象的open ( )方法不同</strong>，XDR 对象的 open ( )方法只接受两个参数：请求的类型和 URL。</p>
+<h4 id="4-1-IE-对-CORS-的实现"><a href="#4-1-IE-对-CORS-的实现" class="headerlink" title="4.1 IE 对 CORS 的实现"></a>4.1 IE 对 CORS 的实现</h4><p>微软在 IE8 中引入了 XDR （XDomainRequest）类型。<br>XDR 对象的使用方法与 XHR 对象非常相似。<strong>与XHR对象的open ( )方法不同</strong>，XDR 对象的 open ( )方法只接受两个参数：请求的类型和 URL。</p>
 <p><strong>所有 XDR 请求都是异步执行的，不能用它来创建同步请求</strong>。请求返回之后，会触发 load 事件，响应的数据也会保存在 responseText 属性中，如下所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xdr = <span class="keyword">new</span> XDomainRequest ();</span><br><span class="line">xdr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(xdr.reponseText);</span><br><span class="line">&#125;;</span><br><span class="line">xdr.open(<span class="string">"get"</span>,<span class="string">"http://www.somewhere-else.com/page/"</span>);</span><br><span class="line">xdr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
-<p>在接收到响应后，只能访问响应的原始文本，无法确定响应的状态代码。</p>
-<h4 id="其他浏览器-对-CORS-的实现"><a href="#其他浏览器-对-CORS-的实现" class="headerlink" title="其他浏览器 对 CORS 的实现"></a>其他浏览器 对 CORS 的实现</h4><p> Firefox 3.5+、 Safari 4+、Chrome、iOS 版 Safari 和 Android 平台中的 WebKit 都通过 XHR 对象实现了对 CORS 的原生支持。这使得在尝试打开不同来源的资源时，无需额外编写代码就可以触发这个行为。要请求位于另一个域中的资源，使用标准的　XHR 对象并<strong>在 open ( ) 方法中传入绝对 URL</strong> 即可。</p>
+<p>在接收到响应后，只能访问响应的原始文本，无法确定响应的状态代码。而且，只要响应有效就会触发 load 事件，如果失败（包括响应中缺少 Access-Control-Allow-Origin 头部）就会触发 error 事件。但出了错误本身，没有其他信息可用，也就是我们只能知道请求未成功，但无法知道具体原因。</p>
+<h4 id="4-2-其他浏览器-对-CORS-的实现"><a href="#4-2-其他浏览器-对-CORS-的实现" class="headerlink" title="4.2 其他浏览器 对 CORS 的实现"></a>4.2 其他浏览器 对 CORS 的实现</h4><p> Firefox 3.5+、 Safari 4+、Chrome、iOS 版 Safari 和 Android 平台中的 WebKit 都通过 XHR 对象实现了对 CORS 的原生支持。这使得在尝试打开不同来源的资源时，无需额外编写代码就可以触发这个行为。要请求位于另一个域中的资源，使用标准的　XHR 对象并<strong>在 open ( ) 方法中传入绝对 URL</strong> 即可。</p>
 <p><strong>与IE 中的 XDR 对象不同，通过跨域 XHR 对象可以访问 status 和 statusText 属性，而且还支持同步请求。</strong>跨域 XHR 对象也有一些限制，但为了安全这些限制是必需的。以下就是这些限制。</p>
 <ul>
 <li>不能使用 setRequestHeader( ) 设置自定义头部。</li>
 <li>不能发送和接受 cookie。</li>
-<li>调用 getAllResponseHeaders( ) 方法总会返回空字符串。<br>由于无论同源请求还是跨源请求都使用相同的接口，因此对于<strong>本地资源</strong>，最好<strong>使用相对 URL</strong>，在<strong>访问远程资源</strong>时再<strong>使用绝对 URL</strong>。这样做能消除歧义，避免出现限制访问头部或本地 cookie 信息等问题。</li>
+<li>调用 getAllResponseHeaders( ) 方法总会返回空字符串。</li>
 </ul>
+<p>由于无论同源请求还是跨源请求都使用相同的接口，因此对于<strong>本地资源</strong>，最好<strong>使用相对 URL</strong>，在<strong>访问远程资源</strong>时再<strong>使用绝对 URL</strong>。这样做能消除歧义，避免出现限制访问头部或本地 cookie 信息等问题。</p>
+<h4 id="4-3-跨浏览器的-CORS"><a href="#4-3-跨浏览器的-CORS" class="headerlink" title="4.3 跨浏览器的 CORS"></a>4.3 跨浏览器的 CORS</h4><p>即使浏览器对 CORS 的支持程度并不都一样，但所有浏览器都支持简单的请求，因此有必要实现一个跨浏览器的方案。检测 XHR 是否支持 CORS 的最简单方式，就是检查是否存在 withCredentials 属性。再结合检测 XDomainRequest 对象是否存在，就可以兼顾所有浏览器了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">createCORSRequest</span> (<span class="params">method, url</span>) </span>&#123;</span><br><span class="line">	 <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	 <span class="keyword">if</span>(<span class="string">"withCredentials"</span> <span class="keyword">in</span> xhr)&#123;</span><br><span class="line">		 xhr.open(method, url, <span class="literal">true</span>);</span><br><span class="line">	 &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> XDomainRequest != <span class="string">"undefined"</span>)&#123;</span><br><span class="line">		 xhr = <span class="keyword">new</span> XDomainRequest();</span><br><span class="line">		 xhr.open(method, url);</span><br><span class="line">	 &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		 xhr = <span class="literal">null</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">return</span> xhr;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> request = createCORSRequest(<span class="string">"get"</span>,<span class="string">"http://www.somewhere-else.com/page/"</span>);</span><br><span class="line"><span class="keyword">if</span>(request)&#123;</span><br><span class="line">	request.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//对 request.reponseText 进行处理</span></span><br><span class="line">	&#125;;</span><br><span class="line">	request.send(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-其他跨域技术"><a href="#5-其他跨域技术" class="headerlink" title="5 其他跨域技术"></a>5 其他跨域技术</h3><p>在 CORS 出现之前，开发人员利用 DOM 能够执行跨域请求的功能，在不依赖 XHR 对象的情况下来发送某种请求。</p>
+<h4 id="5-1-图像-Ping"><a href="#5-1-图像-Ping" class="headerlink" title="5.1 图像 Ping"></a>5.1 图像 Ping</h4><p>一个网页可以从任何网页中加载图像，不用担心跨域不跨域。图像 Ping 是与服务器进行简单、单向的跨域通信的一种方式。请求的数据是通过查询字符串形式发送的。通过图像 Ping，浏览器得不到任何具体的数据，但通过侦听 load 和  error 事件，它能知道响应是什么时候接收到的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">img.onload = img.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(<span class="string">"Done!"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">img.src = <span class="string">"http://www.example.com/test?name=Nicholas"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>请求从设置 src 属性那一刻开始，这个例子在请求中发送了一个 name 参数。</p>
+<p>图像 Ping 最常用于跟踪用户点击页面或动态广告曝光次数。图像 Ping 有两个主要的<strong>缺点</strong>：</p>
+<ul>
+<li>只能发送 GET 请求</li>
+<li>无法访问服务器的响应文本</li>
+</ul>
+<p>因此，图像 Ping 只能用于浏览器与服务期间的单向通信。</p>
+<h4 id="5-2-JSONP"><a href="#5-2-JSONP" class="headerlink" title="5.2 JSONP"></a>5.2 JSONP</h4><p>JSONP 是 JSON with padding (填充式 JSON 或参数式 JSON ) 的简写。</p>
+<p>JSONP 由两部分组成：<em>回调函数和数据</em>。 JSONP 是通过动态  script  元素来使用的，使用时可以为 src 属性指定一个跨域　URL 。 这里 script 元素 与 img 元素类似，都有能力不受限制地从其他域加载资源。</p>
+<p>与图像 Ping 相比，JSONP 的<strong>优点</strong>在于</p>
+<ul>
+<li>能够直接访问响应文本</li>
+<li>支持在浏览器与服务器之间<strong>双向通信</strong>。</li>
+</ul>
+<p>JSONP有两个<strong>缺点</strong>：</p>
+<ul>
+<li>JSONP 是从其他域中加载代码执行。如果其他域不安全，很可能会在响应中夹带一些恶意代码</li>
+<li>要确定 JSONP 请求是否失败并不容易。</li>
+</ul>
+<h4 id="5-3-Comet"><a href="#5-3-Comet" class="headerlink" title="5.3  Comet"></a>5.3  Comet</h4><p>Comet 指的是一种更高级的 Ajax 技术（经常也有人称为“服务器推送”）。Ajax 是一种从<strong>页面向服务器请求</strong>数据的技术，而 Comet 则是一种<strong>服务器向页面推送</strong>数据的技术。</p>
+<p>有两种实现 Comet 的方式：长轮询和流。</p>
+<p>所有浏览器都支持长轮询，而只有部分浏览器原生支持 HTTP 流。</p>
+<h4 id="5-4-服务器发送事件-SSE"><a href="#5-4-服务器发送事件-SSE" class="headerlink" title="5.4 服务器发送事件  SSE"></a>5.4 服务器发送事件  SSE</h4><p>SSE （Server-Sent Events，服务器发送事件）是围绕只读 Comet 交互推出的 API 或者模式。SSE API 用于创建到服务器的<strong>单向</strong>连接，服务器通过这个连接可以发送任意数量的数据。</p>
+<p>SSE 既支持长轮询，也支持 HTTP 流。</p>
+<h4 id="5-5-Web-Sockets"><a href="#5-5-Web-Sockets" class="headerlink" title="5.5 Web Sockets"></a>5.5 Web Sockets</h4><p>Web Sockets 的目标是在一个单独的持久连接上提供<strong>全双工、双向</strong>通信。在JavaScript中创建了 Web Socket 之后，会有一个 HTTP 请求发送到浏览器以发起连接。在取得服务器响应后，建立的连接会使用 HTTP 升级从 HTTP 协议交换为 Web Socket 协议。也就是说，使用标准的 HTTP 服务器无法实现 Web Sockets，只有支持这种协议的专门服务器才能正常工作。</p>
+<p>使用自定义协议而非 HTTP 协议的<strong>好处</strong>是：<br>– 能够在客户端和服务器之间发送非常少量的数据，而不必担心 HTTP 那样字节级的开销。由于传递的数据包很小，因此 Web Sockets 非常适合移动应用。毕竟对移动应用而言，带宽和网络延迟都是关键问题。<br>使用自定义协议的<strong>缺点</strong>在于：制定协议的时间比制定 JavaScript API 的时间还要长。</p>
+<p>要创建 Web Socket，先实例一个WebSocket 对象并传入要连接的 URL：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket (<span class="string">"ws://www.example.com/server.php"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>注意，必须给 WebSocket 构造函数传入<strong>绝对</strong>URL。同源策略对 Web Sockets 不适用，因此可以通过它打开到任何站点的连接。WebSocket 对象不支持 DOM 2级事件侦听器，因此必须使用 DOM 0级语法分别定义每个事件处理程序。</p>
+<h4 id="5-6-SSE-与-Web-Sockets"><a href="#5-6-SSE-与-Web-Sockets" class="headerlink" title="5.6 SSE 与 Web Sockets"></a>5.6 SSE 与 Web Sockets</h4><p>面对某个具体用例，在考虑是使用 SSE 还是使用 Web Sockets 时，可以考虑如下几个因素：</p>
+<ul>
+<li>你是否有自由度建立和维护   Web Sockets 服务器，因为 Web Socket 协议不同于 HTTP ，所以现有服务器不能用于 Web Socket 通信。SSE 倒是通过常规 HTTP 通信，因此现有服务器就可以满足。</li>
+<li>到底需不需要双向通信。</li>
+</ul>
+<p>在不能选择  Web Sockets 的情况下，组合 XHR 和 SSE 也能实现双向通信。</p>
 
       
     </div>
@@ -539,7 +578,7 @@ IE7+、Firefox、Opera、Chrom">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHttpRequest-对象"><span class="nav-number">1.</span> <span class="nav-text">XMLHttpRequest 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHttpRequest-2级"><span class="nav-number">2.</span> <span class="nav-text">XMLHttpRequest 2级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进度事件"><span class="nav-number">3.</span> <span class="nav-text">进度事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨源资源共享"><span class="nav-number">4.</span> <span class="nav-text">跨源资源共享</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IE-对-CORS-的实现"><span class="nav-number">4.1.</span> <span class="nav-text">IE 对 CORS 的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他浏览器-对-CORS-的实现"><span class="nav-number">4.2.</span> <span class="nav-text">其他浏览器 对 CORS 的实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-XMLHttpRequest-2级"><span class="nav-number">1.</span> <span class="nav-text">2 XMLHttpRequest 2级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-进度事件"><span class="nav-number">2.</span> <span class="nav-text">3 进度事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-跨源资源共享"><span class="nav-number">3.</span> <span class="nav-text">4 跨源资源共享</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-IE-对-CORS-的实现"><span class="nav-number">3.1.</span> <span class="nav-text">4.1 IE 对 CORS 的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-其他浏览器-对-CORS-的实现"><span class="nav-number">3.2.</span> <span class="nav-text">4.2 其他浏览器 对 CORS 的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-跨浏览器的-CORS"><span class="nav-number">3.3.</span> <span class="nav-text">4.3 跨浏览器的 CORS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-其他跨域技术"><span class="nav-number">4.</span> <span class="nav-text">5 其他跨域技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-图像-Ping"><span class="nav-number">4.1.</span> <span class="nav-text">5.1 图像 Ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-JSONP"><span class="nav-number">4.2.</span> <span class="nav-text">5.2 JSONP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-Comet"><span class="nav-number">4.3.</span> <span class="nav-text">5.3  Comet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-服务器发送事件-SSE"><span class="nav-number">4.4.</span> <span class="nav-text">5.4 服务器发送事件  SSE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-5-Web-Sockets"><span class="nav-number">4.5.</span> <span class="nav-text">5.5 Web Sockets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-6-SSE-与-Web-Sockets"><span class="nav-number">4.6.</span> <span class="nav-text">5.6 SSE 与 Web Sockets</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
