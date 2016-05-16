@@ -67,7 +67,7 @@ IE7+、Firefox、Opera、Chr">
 <meta property="og:description" content="Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。
 1 XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
 IE7+、Firefox、Opera、Chr">
-<meta property="og:updated_time" content="2016-05-16T10:58:14.684Z">
+<meta property="og:updated_time" content="2016-05-16T11:21:10.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax 与 Comet">
 <meta name="twitter:description" content="Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。
@@ -339,6 +339,7 @@ IE7+、Firefox、Opera、Chr">
 <h3 id="4-跨源资源共享"><a href="#4-跨源资源共享" class="headerlink" title="4 跨源资源共享"></a>4 跨源资源共享</h3><p>默认情况下， XHR 对象只能访问与包含它的页面位于同一个域中的资源。这种安全策略可以预防某些恶意行为，但实现合理的跨域请求也至关重要。</p>
 <p>CORS （Cross- Origin Resource Sharing, 跨源资源共享）定义了在必须访问跨源资源时，浏览器与服务器应该如何沟通。CORS 背后的基本思想，就是利用自定义的 HTTP 头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</p>
 <p>如果没有相应的头部，或者有这个头部但是源信息不匹配，浏览器就会驳回请求。注意，<strong>请求和响应都不包含 cookie 信息</strong>。</p>
+<p>可参照<a href="http://seven377.github.io/2016/05/06/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%A7%E6%95%B4%E7%90%86/" target="_blank" rel="external">前端面试题大整理</a>和<a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499861493e7c35be5e0864769a2c06afb4754acc6000" target="_blank" rel="external">廖雪峰网站</a>上的讲解进一步理解。</p>
 <h4 id="4-1-IE-对-CORS-的实现"><a href="#4-1-IE-对-CORS-的实现" class="headerlink" title="4.1 IE 对 CORS 的实现"></a>4.1 IE 对 CORS 的实现</h4><p>微软在 IE8 中引入了 XDR （XDomainRequest）类型。<br>XDR 对象的使用方法与 XHR 对象非常相似。<strong>与XHR对象的open ( )方法不同</strong>，XDR 对象的 open ( )方法只接受两个参数：请求的类型和 URL。</p>
 <p><strong>所有 XDR 请求都是异步执行的，不能用它来创建同步请求</strong>。请求返回之后，会触发 load 事件，响应的数据也会保存在 responseText 属性中，如下所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xdr = <span class="keyword">new</span> XDomainRequest ();</span><br><span class="line">xdr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	alert(xdr.reponseText);</span><br><span class="line">&#125;;</span><br><span class="line">xdr.open(<span class="string">"get"</span>,<span class="string">"http://www.somewhere-else.com/page/"</span>);</span><br><span class="line">xdr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
 <p>在接收到响应后，只能访问响应的原始文本，无法确定响应的状态代码。而且，只要响应有效就会触发 load 事件，如果失败（包括响应中缺少 Access-Control-Allow-Origin 头部）就会触发 error 事件。但出了错误本身，没有其他信息可用，也就是我们只能知道请求未成功，但无法知道具体原因。</p>
