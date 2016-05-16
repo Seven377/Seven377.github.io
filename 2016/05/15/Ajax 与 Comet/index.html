@@ -67,7 +67,7 @@ IE7+、Firefox、Opera、Chr">
 <meta property="og:description" content="Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。
 1 XMLHttpRequest 对象XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。
 IE7+、Firefox、Opera、Chr">
-<meta property="og:updated_time" content="2016-05-15T14:33:46.661Z">
+<meta property="og:updated_time" content="2016-05-16T10:58:14.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax 与 Comet">
 <meta name="twitter:description" content="Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。
@@ -361,7 +361,8 @@ IE7+、Firefox、Opera、Chr">
 </ul>
 <p>因此，图像 Ping 只能用于浏览器与服务期间的单向通信。</p>
 <h4 id="5-2-JSONP"><a href="#5-2-JSONP" class="headerlink" title="5.2 JSONP"></a>5.2 JSONP</h4><p>JSONP 是 JSON with padding (填充式 JSON 或参数式 JSON ) 的简写。</p>
-<p>JSONP 由两部分组成：<em>回调函数和数据</em>。 JSONP 是通过动态  script  元素来使用的，使用时可以为 src 属性指定一个跨域　URL 。 这里 script 元素 与 img 元素类似，都有能力不受限制地从其他域加载资源。</p>
+<p>JSONP 由两部分组成：<em>回调函数和数据</em>。<strong>原理</strong>是：动态插入 script 标签，通过 script 标签引入一个 js 文件，这个 js 文件载入成功后会执行我们在 url 参数中指定的函数，并且会把我们需要的 json 数据作为参数传入。 这里 script 元素 与 img 元素类似，都有能力不受限制地从其他域加载资源。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">createJs</span>(<span class="params">sUrl</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> oScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">        oScript.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">        oScript.src = sUrl;</span><br><span class="line">        <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(oScript);</span><br><span class="line">    &#125;</span><br><span class="line">    createJs(<span class="string">'jsonp.js'</span>);</span><br><span class="line">    box(&#123;</span><br><span class="line">       <span class="string">'name'</span>: <span class="string">'test'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params">json</span>)</span>&#123;</span><br><span class="line">        alert(json.name);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>与图像 Ping 相比，JSONP 的<strong>优点</strong>在于</p>
 <ul>
 <li>能够直接访问响应文本</li>
@@ -372,6 +373,7 @@ IE7+、Firefox、Opera、Chr">
 <li>JSONP 是从其他域中加载代码执行。如果其他域不安全，很可能会在响应中夹带一些恶意代码</li>
 <li>要确定 JSONP 请求是否失败并不容易。</li>
 </ul>
+<p>前端面试大全中提到：JSONP 的优点是兼容性好，简单易用，支持浏览器与服务器双向通信。缺点是只支持 GET 请求。</p>
 <h4 id="5-3-Comet"><a href="#5-3-Comet" class="headerlink" title="5.3  Comet"></a>5.3  Comet</h4><p>Comet 指的是一种更高级的 Ajax 技术（经常也有人称为“服务器推送”）。Ajax 是一种从<strong>页面向服务器请求</strong>数据的技术，而 Comet 则是一种<strong>服务器向页面推送</strong>数据的技术。</p>
 <p>有两种实现 Comet 的方式：长轮询和流。</p>
 <p>所有浏览器都支持长轮询，而只有部分浏览器原生支持 HTTP 流。</p>
