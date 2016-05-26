@@ -63,7 +63,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/26/CommonJS AMD CMD区别/index.html">
 <meta property="og:site_name" content="Seven">
 <meta property="og:description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
-<meta property="og:updated_time" content="2016-05-26T07:28:16.561Z">
+<meta property="og:updated_time" content="2016-05-26T07:57:56.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CommonJS, AMD, CMD 的区别">
 <meta name="twitter:description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
@@ -308,7 +308,7 @@
 <p>AMD异步加载模块。它的模块支持对象 函数 构造器 字符串 JSON等各种类型的模块。 </p>
 <p>适用AMD规范适用define方法定义模块。 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过数组引入依赖，回调函数通过形参传入依赖</span></span><br><span class="line">define([<span class="string">'someModule1'</span>, <span class="string">'someModule2'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">someModule1, someModule2</span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="comment">/// something </span></span><br><span class="line">        someModule1.test(); </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;foo: foo&#125; </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="comment">//要是没什么依赖，就定义简单的模块</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> exports = &#123;&#125;;</span><br><span class="line">	exports.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;……&#125;;</span><br><span class="line">	<span class="keyword">return</span> exports;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>CMD是SeaJS 在推广过程中对模块定义的规范化产出 </p>
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>CMD （通用模块定义）是SeaJS 在推广过程中对模块定义的规范化产出 </p>
 <p>CMD和AMD的区别有以下几点：</p>
 <ul>
 <li>对于依赖的模块AMD是提前执行，CMD是延迟执行。不过RequireJS从2.0开始，也改成可以延迟执行（根据写法不同，处理方式不同）。 </li>
