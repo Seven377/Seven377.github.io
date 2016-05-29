@@ -71,7 +71,7 @@
 [att=value]  该属性有指定的确切的值。
 [att~=value] 该属性的值必须是一系列用空格隔开的多个值，(比如，class=”title featured home”)，而且这些值中的一个必须是指定的值”value”。
 [att|=value] 属性的值就是“value”或者以“value”开始并立即跟上一个“-”字符，也就是“val">
-<meta property="og:updated_time" content="2016-05-29T09:04:08.348Z">
+<meta property="og:updated_time" content="2016-05-29T09:43:09.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高级 css 选择器">
 <meta name="twitter:description" content="1. 属性选择器有6个不同类型的属性选择器：
@@ -325,13 +325,12 @@
 <ol>
 <li><p>如果你想要改变你的博客上的日志部分元素的背景颜色，你可以使用一个指定每一个class属性值以“post-”开始的div的属性选择器：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class|="post"]</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>该语句将匹配所有class属性包含”post”并带”-”字符的div元素。</p>
+<p> 该语句将匹配所有class属性包含”post”并带”-”字符的div元素。</p>
 </li>
-<li>属性选择器的另一个很有用的用处是<strong>定位不同类型的input元素</strong>。比如，如果你想让你的文本输入框使用一个特定的宽度，你可以使用下面的属性选择器：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<li><p>属性选择器的另一个很有用的用处是<strong>定位不同类型的input元素</strong>。比如，如果你想让你的文本输入框使用一个特定的宽度，你可以使用下面的属性选择器：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p> 这将匹配所有type属性值等于“text”的input元素。</p>
 </li>
-</ol>
-<p>这将匹配所有type属性值等于“text”的input元素。</p>
-<ol>
 <li>现在我们可能想为网站上<strong>不同的文件类型的链接添加不同的图标</strong>，这样你的网站的访客就会知道他们将获得一个图片、或者PDF文件、或者是一个word文档等。这就可以使用属性选择器来实现：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href*=".jpg"]</span> &#123;</span><br><span class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(jpeg.gif) no-repeat left <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">0</span> <span class="number">2px</span> <span class="number">20px</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href*=".pdf"]</span> &#123;</span><br><span class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(pdf.gif) no-repeat left <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">0</span> <span class="number">2px</span> <span class="number">20px</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href*=".doc"]</span> &#123;</span><br><span class="line">	<span class="attribute">background</span>: <span class="built_in">url</span>(word.gif) no-repeat left <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">0</span> <span class="number">2px</span> <span class="number">20px</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
