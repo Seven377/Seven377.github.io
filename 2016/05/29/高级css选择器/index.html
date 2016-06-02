@@ -71,7 +71,7 @@
 [att=value]  该属性有指定的确切的值。
 [att~=value] 该属性的值必须是一系列用空格隔开的多个值，(比如，class=”title featured home”)，而且这些值中的一个必须是指定的值”value”。
 [att|=value] 属性的值就是“value”或者以“value”开始并立即跟上一个“-”字符，也就是“val">
-<meta property="og:updated_time" content="2016-06-02T05:13:36.203Z">
+<meta property="og:updated_time" content="2016-06-02T05:28:02.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高级 css 选择器">
 <meta name="twitter:description" content="1. 属性选择器有6个不同类型的属性选择器：
@@ -393,9 +393,8 @@
 <p>在这个选择器中，你可以确定你是在只定位class为”post”的元素的直接子级p元素，而且还是匹配第一个子级p元素。</p>
 <p>:last-of-type伪类与此类似，只是匹配最后一个子元素。</p>
 <h4 id="only-child"><a href="#only-child" class="headerlink" title=":only-child"></a>:only-child</h4><p>:only-child伪类表示一个元素是它的父级元素的<strong>唯一一个子元素</strong>。</p>
-<p>比如说，你有一些盒子(“news”)，里面有一些文字段落，当你有多于一个段落的时候，你想让文字比只有一个段落的时候小一些：</p>
-<p>div.news &gt; p {<br>    font-size: 1.2em;<br>    }</p>
-<p>div.news &gt; p:only-child {<br>    font-size: 1.5em;<br>    }<br>第一个选择器中，我们定义”news”div的所有子级p元素的字体大小。在第二个中，我们覆盖之前的字体大小，如果该p元素是“news” div的唯一子元素的时候，它的字体大小会比较大一些。</p>
+<p>比如说，你有一些盒子(“news”)，里面有一些文字段落，当你有多于一个段落的时候，你想让文字比只有一个段落的时候小一些：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.news</span> &gt; <span class="selector-tag">p</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">1.2em</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.news</span> &gt; <span class="selector-tag">p</span><span class="selector-pseudo">:only-child</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">1.5em</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>第一个选择器中，我们定义”news”div的所有子级p元素的字体大小。在第二个中，我们覆盖之前的字体大小，如果该p元素是“news” div的唯一子元素的时候，它的字体大小会比较大一些。</p>
 <h4 id="only-of-type"><a href="#only-of-type" class="headerlink" title=":only-of-type"></a>:only-of-type</h4><p>:only-of-type伪类表示一个元素是<strong>它的父级元素的唯一一个相同类型的子元素</strong>。</p>
 <p>这有用什么用？假设你有一些日志，每一篇都有个class为”post”的div，他们中的一些有多于一张图片，但是有些可能就只有一张图片。你想让后者中的图片水平居中，而在其它的有多于一张图片的日志中，就将它左浮动。这个需求用这个选择器就很容易实现：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.post</span> &gt; <span class="selector-tag">img</span> &#123;</span><br><span class="line">	<span class="attribute">float</span>: left;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.post</span> &gt; <span class="selector-tag">img</span><span class="selector-pseudo">:only-of-type</span> &#123;</span><br><span class="line">	<span class="attribute">float</span>: none;</span><br><span class="line">	<span class="attribute">margin</span>: auto;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="empty"><a href="#empty" class="headerlink" title=":empty"></a>:empty</h4><p>:empty伪类表示<strong>一个元素里面没有任何内容</strong>。</p>
