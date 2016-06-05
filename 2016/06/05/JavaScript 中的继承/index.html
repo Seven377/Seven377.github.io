@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
+<meta name="description" content="许多OO 语言都支持两种继承方式：接口继承和实现继承。接口继承只继承方法签名，而实现继承则继承实际的方法。由于函数没有签名，在 ECMAScript 中无法实现接口继承。ECMAScript 只支持实现继承，而且其实现继承主要是依靠原型链来实现的。
+1.原型链实现原型链有一种基本模式，其代码大致如下。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CommonJS, AMD, CMD 的区别">
-<meta property="og:url" content="http://yoursite.com/2016/05/26/CommonJS AMD CMD区别/index.html">
+<meta property="og:title" content="JavaScript 中的继承">
+<meta property="og:url" content="http://yoursite.com/2016/06/05/JavaScript 中的继承/index.html">
 <meta property="og:site_name" content="Seven">
-<meta property="og:description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
-<meta property="og:updated_time" content="2016-05-26T07:57:56.875Z">
+<meta property="og:description" content="许多OO 语言都支持两种继承方式：接口继承和实现继承。接口继承只继承方法签名，而实现继承则继承实际的方法。由于函数没有签名，在 ECMAScript 中无法实现接口继承。ECMAScript 只支持实现继承，而且其实现继承主要是依靠原型链来实现的。
+1.原型链实现原型链有一种基本模式，其代码大致如下。">
+<meta property="og:updated_time" content="2016-06-05T05:43:21.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CommonJS, AMD, CMD 的区别">
-<meta name="twitter:description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
+<meta name="twitter:title" content="JavaScript 中的继承">
+<meta name="twitter:description" content="许多OO 语言都支持两种继承方式：接口继承和实现继承。接口继承只继承方法签名，而实现继承则继承实际的方法。由于函数没有签名，在 ECMAScript 中无法实现接口继承。ECMAScript 只支持实现继承，而且其实现继承主要是依靠原型链来实现的。
+1.原型链实现原型链有一种基本模式，其代码大致如下。">
 
 
 
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title> CommonJS, AMD, CMD 的区别 | Seven </title>
+  <title> JavaScript 中的继承 | Seven </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +237,7 @@
             
             
               
-                CommonJS, AMD, CMD 的区别
+                JavaScript 中的继承
               
             
           </h1>
@@ -246,8 +249,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-26T15:25:59+08:00" content="2016-05-26">
-              2016-05-26
+            <time itemprop="dateCreated" datetime="2016-06-05T13:42:59+08:00" content="2016-06-05">
+              2016-06-05
             </time>
           </span>
 
@@ -276,8 +279,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/26/CommonJS AMD CMD区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/CommonJS AMD CMD区别/" itemprop="commentsCount"></span>
+                <a href="/2016/06/05/JavaScript 中的继承/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/05/JavaScript 中的继承/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,25 +302,15 @@
       
 
       
-        <p><strong>CommonJS</strong>是用在服务器端的，同步的，如 nodejs<br><strong>AMD, CMD</strong>是用在浏览器端的，异步的，如 requirejs 和 seajs<br>其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。<br><a id="more"></a></p>
-<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>CommonJS 是服务器端模块的规范，Node.js采用了这个规范。</p>
-<p>根据CommonJS规范，一个单独的文件就是一个模块。</p>
-<p>CommonJS 定义的模块分为:{模块引用(require)} {模块定义(exports)} {模块标识(module)}<br>require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。</p>
-<p>CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD  CMD 解决方案。 </p>
-<h3 id="AMD-Asynchromous-Module-Definition"><a href="#AMD-Asynchromous-Module-Definition" class="headerlink" title="AMD (Asynchromous Module Definition)"></a>AMD (Asynchromous Module Definition)</h3><p>AMD （异步模块定义） 是 RequireJS 在推广过程中对模块定义的规范化产出 </p>
-<p>AMD异步加载模块。它的模块支持对象 函数 构造器 字符串 JSON等各种类型的模块。 </p>
-<p>适用AMD规范适用define方法定义模块。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过数组引入依赖，回调函数通过形参传入依赖</span></span><br><span class="line">define([<span class="string">'someModule1'</span>, <span class="string">'someModule2'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">someModule1, someModule2</span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="comment">/// something </span></span><br><span class="line">        someModule1.test(); </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;foo: foo&#125; </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="comment">//要是没什么依赖，就定义简单的模块</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> exports = &#123;&#125;;</span><br><span class="line">	exports.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;……&#125;;</span><br><span class="line">	<span class="keyword">return</span> exports;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>CMD （通用模块定义）是SeaJS 在推广过程中对模块定义的规范化产出 </p>
-<p>CMD和AMD的区别有以下几点：</p>
-<ul>
-<li>对于依赖的模块AMD是提前执行，CMD是延迟执行。不过RequireJS从2.0开始，也改成可以延迟执行（根据写法不同，处理方式不同）。 </li>
-<li><p>CMD推崇依赖就近，AMD推崇依赖前置。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//AMD </span></span><br><span class="line">define([<span class="string">'./a'</span>,<span class="string">'./b'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//依赖一开始就写好 </span></span><br><span class="line">    a.test(); </span><br><span class="line">    b.test(); </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="comment">//CMD </span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">requie, exports, module</span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//依赖可以就近书写 </span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>); </span><br><span class="line">    a.test(); </span><br><span class="line"> </span><br><span class="line">    ... </span><br><span class="line">    <span class="comment">//软依赖 </span></span><br><span class="line">    <span class="keyword">if</span> (status) &#123; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> b = requie(<span class="string">'./b'</span>); </span><br><span class="line">        b.test(); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>  虽然 AMD也支持CMD写法，但依赖前置是官方文档的默认模块定义写法。</p>
-</li>
-<li>AMD的api默认是一个当多个用，CMD严格的区分推崇职责单一。例如：AMD里require分全局的和局部的。CMD里面没有全局的 require,提供 seajs.use()来实现模块系统的加载启动。CMD里每个API都简单纯粹。</li>
-</ul>
+        <p>许多OO 语言都支持两种继承方式：接口继承和实现继承。接口继承只继承方法签名，而实现继承则继承实际的方法。由于函数没有签名，在 ECMAScript 中无法实现接口继承。ECMAScript <strong>只支持实现继承</strong>，而且其实现继承主要是<strong>依靠原型链</strong>来实现的。</p>
+<h3 id="1-原型链"><a href="#1-原型链" class="headerlink" title="1.原型链"></a>1.原型链</h3><p>实现原型链有一种基本模式，其代码大致如下。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.property = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.property;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.subproperty = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承了 SuperType</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"></span><br><span class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</span><br><span class="line">alert(instance.getSuperValue());       <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>可以通过两种方式来确定原型和实例之间的关系： <strong>instanceof 操作符</strong> 和 <strong>isPrototypeOf()</strong> 方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alert(instance <span class="keyword">instanceof</span> Objet);    <span class="comment">//true</span></span><br><span class="line">alert(instance <span class="keyword">instanceof</span> SuperType);   <span class="comment">//true</span></span><br><span class="line">alert(instance <span class="keyword">instanceof</span> SubType);     <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">Object</span>.prototype.isPrototypeOf(instance));    <span class="comment">//true</span></span><br><span class="line">alert(SuperType.prototype.isPrototypeOf(instance));   <span class="comment">//true</span></span><br><span class="line">alert(SubType.prototype.isPrototypeOf(instance));     <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="原型链的问题"><a href="#原型链的问题" class="headerlink" title="原型链的问题"></a>原型链的问题</h4><p>原型链虽然强大，可以用它来实现继承，但它也存在一些问题。其中，<strong>最主要的问题</strong>来自包含引用类型值的原型。在通过原型来实现继承时，原型实际上会变成另一个类型的实例。于是，原先的实例属性也就顺理成章地变成了现在的原型属性了。下列代码可以用来说明这个问题。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承了 SuperType</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</span><br><span class="line">instance1.colors.push(<span class="string">"black"</span>);</span><br><span class="line">alert(instance1.colors);   <span class="comment">//"red,blue,green,black"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</span><br><span class="line">alert(instance2.colors);   <span class="comment">//"red,blue,green,black"</span></span><br></pre></td></tr></table></figure></p>
+<p>原型链的<strong>第二个问题</strong>是：在创建子类型的实例时，不能向超类型的构造函数中传递参数。实际上，应该说是没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数。</p>
+<p>有鉴于此，再加上前面讨论的由于原型中包含引用类型值所带来的问题，实践中<strong>很少会单独使用原型链</strong>。</p>
+<h3 id="2-借用构造函数"><a href="#2-借用构造函数" class="headerlink" title="2. 借用构造函数"></a>2. 借用构造函数</h3><p>在解决原型中包含引用类型值所带来问题的过程中，开发人员使用一种叫做借用构造函数的技术（有时候也叫作 伪造对象或经典继承）。这种技术的基本思想相当简单，即在子类型构造函数的内部调用超类型构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//继承了 SuperType</span></span><br><span class="line">	SuperType.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</span><br><span class="line">instance1.colors.push(<span class="string">"black"</span>);</span><br><span class="line">alert(instance1.colors);      <span class="comment">//"red,blue,green,black"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</span><br><span class="line">alert(instance2.colors);      <span class="comment">//"red,blue,green"</span></span><br></pre></td></tr></table></figure></p>
+<p>相对于原型链而言，借用构造函数有一个很大的优势，即可以在子类型构造函数中向超类型构造函数传递参数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//继承了SuperType，同时还传递了参数</span></span><br><span class="line">	SuperType.call(<span class="keyword">this</span>, <span class="string">"Nicholas"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//实例属性</span></span><br><span class="line">	<span class="keyword">this</span>.age = <span class="number">29</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</span><br><span class="line">alert(instance.name);     <span class="comment">//"Nicholas"</span></span><br><span class="line">alert(instance.age);      <span class="comment">// 29</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="借用构造函数的问题"><a href="#借用构造函数的问题" class="headerlink" title="借用构造函数的问题"></a>借用构造函数的问题</h4><p>如果仅仅是借用构造函数，那么也将无法避免构造函数模式存在的问题—-方法都在构造函数中定义，因此函数复用就无从谈起了。而且，在超类型的原型中定义的方法，对于子类型而言也是不可见的，结果所有类型都只能使用构造函数模式。考虑到这些问题，借用构造函数的技术也是<strong>很少单独使用的</strong>。</p>
 
       
     </div>
@@ -343,17 +336,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/15/Ajax 与 Comet/" rel="next" title="Ajax 与 Comet">
-                <i class="fa fa-chevron-left"></i> Ajax 与 Comet
+              <a href="/2016/06/04/创建对象的几种方式/" rel="next" title="创建对象的几种方式">
+                <i class="fa fa-chevron-left"></i> 创建对象的几种方式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/29/高级css选择器/" rel="prev" title="高级 css 选择器">
-                高级 css 选择器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -385,8 +374,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/26/CommonJS AMD CMD区别/"
-           data-title="CommonJS, AMD, CMD 的区别" data-url="http://yoursite.com/2016/05/26/CommonJS AMD CMD区别/">
+      <div class="ds-thread" data-thread-key="2016/06/05/JavaScript 中的继承/"
+           data-title="JavaScript 中的继承" data-url="http://yoursite.com/2016/06/05/JavaScript 中的继承/">
       </div>
     
   </div>
@@ -513,7 +502,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS"><span class="nav-number">1.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD-Asynchromous-Module-Definition"><span class="nav-number">2.</span> <span class="nav-text">AMD (Asynchromous Module Definition)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">3.</span> <span class="nav-text">CMD</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型链"><span class="nav-number">1.</span> <span class="nav-text">1.原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链的问题"><span class="nav-number">1.1.</span> <span class="nav-text">原型链的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-借用构造函数"><span class="nav-number">2.</span> <span class="nav-text">2. 借用构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#借用构造函数的问题"><span class="nav-number">2.1.</span> <span class="nav-text">借用构造函数的问题</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
