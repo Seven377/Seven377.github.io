@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,Web," />
+  <meta name="keywords" content="Web,css," />
 
 
 
@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
+<meta name="description" content="Sass 是一门高于 CSS 的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass 能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
+Sass 前世今生Sass 是最早的 CSS 预处理语言，有比 LESS 更为强大的功能，不过其一开始的缩进式语法（Sass 老版本语法 ）并不能被大众接受，不过由于其强大的功能和 Ruby on R">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CommonJS, AMD, CMD 的区别">
-<meta property="og:url" content="http://yoursite.com/2016/05/26/CommonJS AMD CMD区别/index.html">
+<meta property="og:title" content="LESS">
+<meta property="og:url" content="http://yoursite.com/2016/07/06/SASS/index.html">
 <meta property="og:site_name" content="Seven">
-<meta property="og:description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
-<meta property="og:updated_time" content="2016-05-26T07:57:56.875Z">
+<meta property="og:description" content="Sass 是一门高于 CSS 的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass 能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
+Sass 前世今生Sass 是最早的 CSS 预处理语言，有比 LESS 更为强大的功能，不过其一开始的缩进式语法（Sass 老版本语法 ）并不能被大众接受，不过由于其强大的功能和 Ruby on R">
+<meta property="og:updated_time" content="2016-07-06T07:26:02.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CommonJS, AMD, CMD 的区别">
-<meta name="twitter:description" content="CommonJS是用在服务器端的，同步的，如 nodejsAMD, CMD是用在浏览器端的，异步的，如 requirejs 和 seajs其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。">
+<meta name="twitter:title" content="LESS">
+<meta name="twitter:description" content="Sass 是一门高于 CSS 的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass 能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
+Sass 前世今生Sass 是最早的 CSS 预处理语言，有比 LESS 更为强大的功能，不过其一开始的缩进式语法（Sass 老版本语法 ）并不能被大众接受，不过由于其强大的功能和 Ruby on R">
 
 
 
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title> CommonJS, AMD, CMD 的区别 | Seven </title>
+  <title> LESS | Seven </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +237,7 @@
             
             
               
-                CommonJS, AMD, CMD 的区别
+                LESS
               
             
           </h1>
@@ -246,8 +249,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-26T15:25:59+08:00" content="2016-05-26">
-              2016-05-26
+            <time itemprop="dateCreated" datetime="2016-07-06T14:55:59+08:00" content="2016-07-06">
+              2016-07-06
             </time>
           </span>
 
@@ -260,8 +263,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -276,8 +279,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/26/CommonJS AMD CMD区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/CommonJS AMD CMD区别/" itemprop="commentsCount"></span>
+                <a href="/2016/07/06/SASS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/06/SASS/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,25 +302,17 @@
       
 
       
-        <p><strong>CommonJS</strong>是用在服务器端的，同步的，如 nodejs<br><strong>AMD, CMD</strong>是用在浏览器端的，异步的，如 requirejs 和 seajs<br>其中，AMD 先提出，CMD 是根据 CommonJS 和 AMD 基础上提出的。<br><a id="more"></a></p>
-<h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>CommonJS 是服务器端模块的规范，Node.js采用了这个规范。</p>
-<p>根据CommonJS规范，一个单独的文件就是一个模块。</p>
-<p>CommonJS 定义的模块分为:{模块引用(require)} {模块定义(exports)} {模块标识(module)}<br>require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。</p>
-<p>CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。像Node.js主要用于服务器的编程，加载的模块文件一般都已经存在本地硬盘，所以加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范比较适用。但如果是浏览器环境，要从服务器加载模块，这是就必须采用异步模式。所以就有了 AMD  CMD 解决方案。 </p>
-<h3 id="AMD-Asynchromous-Module-Definition"><a href="#AMD-Asynchromous-Module-Definition" class="headerlink" title="AMD (Asynchromous Module Definition)"></a>AMD (Asynchromous Module Definition)</h3><p>AMD （异步模块定义） 是 RequireJS 在推广过程中对模块定义的规范化产出 </p>
-<p>AMD异步加载模块。它的模块支持对象 函数 构造器 字符串 JSON等各种类型的模块。 </p>
-<p>适用AMD规范适用define方法定义模块。 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过数组引入依赖，回调函数通过形参传入依赖</span></span><br><span class="line">define([<span class="string">'someModule1'</span>, <span class="string">'someModule2'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">someModule1, someModule2</span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="comment">/// something </span></span><br><span class="line">        someModule1.test(); </span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;foo: foo&#125; </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="comment">//要是没什么依赖，就定义简单的模块</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> exports = &#123;&#125;;</span><br><span class="line">	exports.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;……&#125;;</span><br><span class="line">	<span class="keyword">return</span> exports;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>CMD （通用模块定义）是SeaJS 在推广过程中对模块定义的规范化产出 </p>
-<p>CMD和AMD的区别有以下几点：</p>
+        <p>Sass 是一门高于 CSS 的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。<br>Sass 能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。</p>
+<h4 id="Sass-前世今生"><a href="#Sass-前世今生" class="headerlink" title="Sass 前世今生"></a>Sass 前世今生</h4><p>Sass 是最早的 CSS 预处理语言，有比 LESS 更为强大的功能，不过其一开始的缩进式语法（Sass 老版本语法 ）并不能被大众接受，不过由于其强大的功能和 Ruby on Rails 的大力推动，还是有很多开发者选择了 Sass。<br><a id="more"></a><br>Sass 是采用 Ruby 语言编写的一款 CSS 预处理语言，它诞生于2007年，是最大的成熟的 CSS 预处理语言。最初它是为了配合 HAML（一种缩进式 HTML 预编译器）而设计的，因此有着和 HTML 一样的缩进式风格。</p>
+<h4 id="为什么早期不如-LESS-普及？"><a href="#为什么早期不如-LESS-普及？" class="headerlink" title="为什么早期不如 LESS 普及？"></a>为什么早期不如 LESS 普及？</h4><p>虽然缩进式风格可以有效缩减代码量，强制规范编码风格，但它一方面并不为大多数程序接受，另一方面无法兼容已有的 CSS 代码。这也是 Sass 虽然出现得最早，但远不如 LESS 普及的原因。</p>
+<h4 id="Sass-和-SCSS-区别"><a href="#Sass-和-SCSS-区别" class="headerlink" title="Sass 和 SCSS 区别"></a>Sass 和 SCSS 区别</h4><p>Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：</p>
 <ul>
-<li>对于依赖的模块AMD是提前执行，CMD是延迟执行。不过RequireJS从2.0开始，也改成可以延迟执行（根据写法不同，处理方式不同）。 </li>
-<li><p>CMD推崇依赖就近，AMD推崇依赖前置。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//AMD </span></span><br><span class="line">define([<span class="string">'./a'</span>,<span class="string">'./b'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//依赖一开始就写好 </span></span><br><span class="line">    a.test(); </span><br><span class="line">    b.test(); </span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line"><span class="comment">//CMD </span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params">requie, exports, module</span>) </span>&#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//依赖可以就近书写 </span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>); </span><br><span class="line">    a.test(); </span><br><span class="line"> </span><br><span class="line">    ... </span><br><span class="line">    <span class="comment">//软依赖 </span></span><br><span class="line">    <span class="keyword">if</span> (status) &#123; </span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> b = requie(<span class="string">'./b'</span>); </span><br><span class="line">        b.test(); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>  虽然 AMD也支持CMD写法，但依赖前置是官方文档的默认模块定义写法。</p>
-</li>
-<li>AMD的api默认是一个当多个用，CMD严格的区分推崇职责单一。例如：AMD里require分全局的和局部的。CMD里面没有全局的 require,提供 seajs.use()来实现模块系统的加载启动。CMD里每个API都简单纯粹。</li>
+<li>文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名</li>
+<li>语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号(;)，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。</li>
 </ul>
+<p>示例：<br>Sass 语法：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$font-stack</span>: Helvetica, sans-serif  //定义变量</span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#333</span> //定义变量</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  font: <span class="number">100%</span> <span class="variable">$font-stack</span></span><br><span class="line">  color: <span class="variable">$primary-color</span></span><br></pre></td></tr></table></figure></p>
+<p>SCSS 语法：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$font-stack</span>: Helvetica, sans-serif;</span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#333</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> <span class="variable">$font-stack</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译出来的 CSS：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> Helvetica, sans-serif;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -332,9 +327,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
-          
             <a href="/tags/Web/" rel="tag">#Web</a>
+          
+            <a href="/tags/css/" rel="tag">#css</a>
           
         </div>
       
@@ -343,17 +338,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/15/Ajax 与 Comet/" rel="next" title="Ajax 与 Comet">
-                <i class="fa fa-chevron-left"></i> Ajax 与 Comet
+              <a href="/2016/07/05/LESS/" rel="next" title="LESS">
+                <i class="fa fa-chevron-left"></i> LESS
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/29/高级css选择器/" rel="prev" title="高级 css 选择器">
-                高级 css 选择器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -385,8 +376,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/26/CommonJS AMD CMD区别/"
-           data-title="CommonJS, AMD, CMD 的区别" data-url="http://yoursite.com/2016/05/26/CommonJS AMD CMD区别/">
+      <div class="ds-thread" data-thread-key="2016/07/06/SASS/"
+           data-title="LESS" data-url="http://yoursite.com/2016/07/06/SASS/">
       </div>
     
   </div>
@@ -513,7 +504,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS"><span class="nav-number">1.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AMD-Asynchromous-Module-Definition"><span class="nav-number">2.</span> <span class="nav-text">AMD (Asynchromous Module Definition)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">3.</span> <span class="nav-text">CMD</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sass-前世今生"><span class="nav-number">1.</span> <span class="nav-text">Sass 前世今生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么早期不如-LESS-普及？"><span class="nav-number">2.</span> <span class="nav-text">为什么早期不如 LESS 普及？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sass-和-SCSS-区别"><span class="nav-number">3.</span> <span class="nav-text">Sass 和 SCSS 区别</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
