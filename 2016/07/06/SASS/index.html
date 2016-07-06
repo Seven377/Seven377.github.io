@@ -65,7 +65,7 @@ Sass 前世今生Sass 是最早的 CSS 预处理语言，有比 LESS 更为强�
 <meta property="og:site_name" content="Seven">
 <meta property="og:description" content="Sass 是一门高于 CSS 的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass 能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
 Sass 前世今生Sass 是最早的 CSS 预处理语言，有比 LESS 更为强大的功能，不过其一开始的缩进式语法（Sass 老版本语法 ）并不能被大众接受，不过由于其强大的功能和 Ruby on R">
-<meta property="og:updated_time" content="2016-07-06T08:40:39.068Z">
+<meta property="og:updated_time" content="2016-07-06T11:09:19.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SASS">
 <meta name="twitter:description" content="Sass 是一门高于 CSS 的元语言，它能用来清晰地、结构化地描述文件样式，有着比普通 CSS 更加强大的功能。Sass 能够提供更简洁、更优雅的语法，同时提供多种功能来创建可维护和管理的样式表。
@@ -321,6 +321,12 @@ Sass 前世今生Sass 是最早的 CSS 预处理语言，有比 LESS 更为强�
 <p>编译后的css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="number">1.5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>sass 的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量之前重新声明下变量即可。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$baseLineHeight</span>: <span class="number">2</span>;</span><br><span class="line"><span class="variable">$baseLineHeight</span>: <span class="number">1.5</span> !default;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="variable">$baseLineHeight</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>编译后的css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="什么时候声明变量"><a href="#什么时候声明变量" class="headerlink" title="什么时候声明变量"></a>什么时候声明变量</h5><p>只有满足所有下述标准时方可创建新变量：</p>
+<ul>
+<li>该值至少重复出现了两次；</li>
+<li>该值至少可能会被更新一次；</li>
+<li>该值所有的表现都与变量有关（非巧合）。<br>基本上，没有理由声明一个永远不需要更新或者只在单一地方使用变量。</li>
+</ul>
 
       
     </div>
@@ -512,7 +518,7 @@ Sass 前世今生Sass 是最早的 CSS 预处理语言，有比 LESS 更为强�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sass-前世今生"><span class="nav-number">1.</span> <span class="nav-text">Sass 前世今生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么早期不如-LESS-普及？"><span class="nav-number">2.</span> <span class="nav-text">为什么早期不如 LESS 普及？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sass-和-SCSS-区别"><span class="nav-number">3.</span> <span class="nav-text">Sass 和 SCSS 区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#普通变量"><span class="nav-number">4.1.</span> <span class="nav-text">普通变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认变量"><span class="nav-number">5.</span> <span class="nav-text">默认变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sass-前世今生"><span class="nav-number">1.</span> <span class="nav-text">Sass 前世今生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么早期不如-LESS-普及？"><span class="nav-number">2.</span> <span class="nav-text">为什么早期不如 LESS 普及？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sass-和-SCSS-区别"><span class="nav-number">3.</span> <span class="nav-text">Sass 和 SCSS 区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#普通变量"><span class="nav-number">4.1.</span> <span class="nav-text">普通变量</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认变量"><span class="nav-number">5.</span> <span class="nav-text">默认变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么时候声明变量"><span class="nav-number">5.1.</span> <span class="nav-text">什么时候声明变量</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
