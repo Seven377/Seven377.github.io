@@ -60,13 +60,8 @@
 <meta name="description" content="Float 的设计初衷仅仅是：文字环绕效果。
 清除浮动带来的影响，有两种方法：
 
-脚底插入 clear: both;
-父元素 BFC (IE8+) 或 haslayout (IE6/IE7)
-
-clear 通常应用形式：
-
-在塌陷的父元素底部插入具有 clear: both 声明的 block 水平元素，一般是插入
-使用 after 在父元素底部生成一个具有 clear：both 声明的伪元素。">
+底部插入 clear: both;
+父元素 BFC (IE8+) 或 haslayout (IE6/IE7)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS-float">
 <meta property="og:url" content="http://yoursite.com/2016/07/26/CSS-float/index.html">
@@ -74,26 +69,16 @@ clear 通常应用形式：
 <meta property="og:description" content="Float 的设计初衷仅仅是：文字环绕效果。
 清除浮动带来的影响，有两种方法：
 
-脚底插入 clear: both;
-父元素 BFC (IE8+) 或 haslayout (IE6/IE7)
-
-clear 通常应用形式：
-
-在塌陷的父元素底部插入具有 clear: both 声明的 block 水平元素，一般是插入
-使用 after 在父元素底部生成一个具有 clear：both 声明的伪元素。">
-<meta property="og:updated_time" content="2016-07-26T07:18:19.826Z">
+底部插入 clear: both;
+父元素 BFC (IE8+) 或 haslayout (IE6/IE7)">
+<meta property="og:updated_time" content="2016-07-26T07:32:22.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-float">
 <meta name="twitter:description" content="Float 的设计初衷仅仅是：文字环绕效果。
 清除浮动带来的影响，有两种方法：
 
-脚底插入 clear: both;
-父元素 BFC (IE8+) 或 haslayout (IE6/IE7)
-
-clear 通常应用形式：
-
-在塌陷的父元素底部插入具有 clear: both 声明的 block 水平元素，一般是插入
-使用 after 在父元素底部生成一个具有 clear：both 声明的伪元素。">
+底部插入 clear: both;
+父元素 BFC (IE8+) 或 haslayout (IE6/IE7)">
 
 
 
@@ -329,11 +314,9 @@ clear 通常应用形式：
         <p>Float 的设计初衷仅仅是：<span style="color:red">文字环绕效果</span>。</p>
 <p>清除浮动带来的影响，有两种方法：</p>
 <ul>
-<li>脚底插入 clear: both;</li>
-<li>父元素 BFC (IE8+) 或 haslayout (IE6/IE7)</li>
-</ul>
-<p>clear 通常应用形式：</p>
-<ul>
+<li>底部插入 clear: both;</li>
+<li>父元素 BFC (IE8+) 或 haslayout (IE6/IE7)<a id="more"></a>
+clear 通常应用形式：</li>
 <li>在塌陷的父元素底部插入具有 clear: both 声明的 block 水平元素，一般是插入<div...></div...></li>
 <li>使用 after 在父元素底部生成一个具有 clear：both 声明的伪元素。     .clearfix: after{}</li>
 </ul>
@@ -342,6 +325,17 @@ clear 通常应用形式：
 <li>空的div 元素，会添加很多无意义的空标签。</li>
 <li>:after 伪元素：IE6/IE7 不支持</li>
 </ul>
+<p>BFC/haslayout 通常声明：</p>
+<ul>
+<li>float: left/right</li>
+<li>position: absolute/fixed</li>
+<li>overflow: hidden/scroll (IE7+)</li>
+<li>display: inline-block/table-cell (IE8+)</li>
+<li>width/height/zoom:1/…  (IE6/IE7)</li>
+</ul>
+<p>不足：无法“一方通行”</p>
+<p>权衡后的策略：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//IE8+ :</span><br><span class="line">.clearfix: after&#123;</span><br><span class="line">	content: '';</span><br><span class="line">	display: block;</span><br><span class="line">	height: 0;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">//或者更好的方法：</span><br><span class="line">.clearfix:after&#123;</span><br><span class="line">	content: '';</span><br><span class="line">	display: table;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">//IE6/IE7</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	*zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意</strong>： .clearfix 应用在包含浮动子元素的<span style="color:red">父级元素</span>上。</p>
 
       
     </div>
