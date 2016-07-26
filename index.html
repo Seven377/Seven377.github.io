@@ -306,6 +306,21 @@
         
           
             <p>Float 的设计初衷仅仅是：<span style="color:red">文字环绕效果</span>。</p>
+<p>清除浮动带来的影响，有两种方法：</p>
+<ul>
+<li>脚底插入 clear: both;</li>
+<li>父元素 BFC (IE8+) 或 haslayout (IE6/IE7)</li>
+</ul>
+<p>clear 通常应用形式：</p>
+<ul>
+<li>在塌陷的父元素底部插入具有 clear: both 声明的 block 水平元素，一般是插入<div...></div...></li>
+<li>使用 after 在父元素底部生成一个具有 clear：both 声明的伪元素。     .clearfix: after{}</li>
+</ul>
+<p>不足：</p>
+<ul>
+<li>空的div 元素，会添加很多无意义的空标签。</li>
+<li>:after 伪元素：IE6/IE7 不支持</li>
+</ul>
 
           
         
