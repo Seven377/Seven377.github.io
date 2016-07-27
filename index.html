@@ -236,6 +236,113 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/27/知识点/" itemprop="url">
+                  知识点
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-27T13:43:35+08:00" content="2016-07-27">
+              2016-07-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/27/知识点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/知识点/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h4><h5 id="JS-控制-float-属性"><a href="#JS-控制-float-属性" class="headerlink" title="JS 控制 float 属性"></a>JS 控制 float 属性</h5><p>由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。</p>
+<pre><code class="javascript">LTFunction.setFloatStyle = <span class="function"><span class="keyword">function</span>(<span class="params">obj,style</span>) </span>{ 
+    <span class="keyword">var</span> sty=obj.style; 
+    <span class="keyword">if</span>(<span class="string">'cssFloat'</span> <span class="keyword">in</span> sty){ 
+        obj.style.cssFloat=style; 
+    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">'styleFloat'</span> <span class="keyword">in</span> sty){ 
+        obj.style.styleFloat=style; 
+    }<span class="keyword">else</span>{ 
+        <span class="keyword">throw</span> <span class="string">'set float style:'</span>+style+<span class="string">'error.'</span>; 
+    } 
+}
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/26/CSS-float/" itemprop="url">
                   CSS-float
                 </a>
@@ -255,25 +362,6 @@
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web-css/" itemprop="url" rel="index">
-                    <span itemprop="name">web,css</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -1283,125 +1371,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/15/Ajax 与 Comet/" itemprop="url">
-                  Ajax 与 Comet
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-15T14:38:59+08:00" content="2016-05-15">
-              2016-05-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/15/Ajax 与 Comet/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/15/Ajax 与 Comet/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Ajax （Asynchronous JavaScript + XML）这种技术可以在不刷新页面的情况下从服务器获取数据。Ajax 技术的核心是 XMLHttpRequest (XHR) 对象。</p>
-<h3 id="1-XMLHttpRequest-对象"><a href="#1-XMLHttpRequest-对象" class="headerlink" title="1 XMLHttpRequest 对象"></a>1 XMLHttpRequest 对象</h3><p>XHR 对象最早由 IE5 引入，在 IE5 中，XHR 对象是通过 MSXML 库中的一个 ActiveX 对象实现。</p>
-<p>IE7+、Firefox、Opera、Chrome和 Safari 都支持原生的 XHR 对象。可通过以下方式来创建 XHR 对象<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/15/Ajax 与 Comet/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1447,7 +1416,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1455,7 +1424,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
