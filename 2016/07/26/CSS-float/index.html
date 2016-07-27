@@ -71,7 +71,7 @@
 
 底部插入 clear: both;
 父元素 BFC (IE8+) 或 haslayout (IE6/IE7)">
-<meta property="og:updated_time" content="2016-07-26T07:56:21.210Z">
+<meta property="og:updated_time" content="2016-07-27T11:19:09.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-float">
 <meta name="twitter:description" content="Float 的设计初衷仅仅是：文字环绕效果。
@@ -317,6 +317,22 @@ clear 通常应用形式：</li>
 <p>不足：无法“一方通行”</p>
 <p>权衡后的策略：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//IE8+ :</span><br><span class="line">.clearfix: after&#123;</span><br><span class="line">	content: '';</span><br><span class="line">	display: block;</span><br><span class="line">	height: 0;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">//或者更好的方法：</span><br><span class="line">.clearfix:after&#123;</span><br><span class="line">	content: '';</span><br><span class="line">	display: table;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">//IE6/IE7</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	*zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>注意</strong>： .clearfix 应用在包含浮动子元素的<span style="color:red">父级元素</span>上。</p>
+<p>浮动可以让元素 block 块状化，也可以破坏性造成紧密排列（去空格化）。</p>
+<p>砌砖布局的问题：</p>
+<ul>
+<li>容错性比较糟糕，容易出问题</li>
+<li>这种布局需要元素固定尺寸，很难重复使用</li>
+<li>在低版本的 IE 下会有很多问题<br>综上所述，尽量少用浮动实现砌砖布局。</li>
+</ul>
+<p>用 float 实现各种布局的方法，请看<span color="red">知识点中 CSS 篇</span>。</p>
+<p>让 IE7 飙泪的浮动问题：</p>
+<ul>
+<li>含 clear 的浮动元素包裹不正确的问题</li>
+<li>浮动元素倒数 2 个莫名垂直间距问题</li>
+<li>浮动元素最后一个字符重复问题</li>
+<li>浮动元素楼梯排列问题</li>
+<li>浮动元素和文本不在同一行的问题 （解决方案：左侧内容左浮动，右侧内容有浮动）</li>
+</ul>
 
       
     </div>

@@ -285,8 +285,7 @@
 
       
         
-          
-            <h4 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h4><h5 id="JS-控制-float-属性"><a href="#JS-控制-float-属性" class="headerlink" title="JS 控制 float 属性"></a>JS 控制 float 属性</h5><p>由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。</p>
+          <h4 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h4><h5 id="JS-控制-float-属性"><a href="#JS-控制-float-属性" class="headerlink" title="JS 控制 float 属性"></a>JS 控制 float 属性</h5><p>由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。</p>
 <pre><code class="javascript">LTFunction.setFloatStyle = <span class="function"><span class="keyword">function</span>(<span class="params">obj,style</span>) </span>{ 
     <span class="keyword">var</span> sty=obj.style; 
     <span class="keyword">if</span>(<span class="string">'cssFloat'</span> <span class="keyword">in</span> sty){ 
@@ -298,10 +297,11 @@
     } 
 }
 </code></pre>
-<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><h4 id="文字环绕布局"><a href="#文字环绕布局" class="headerlink" title="文字环绕布局"></a>文字环绕布局</h4><p>float<br>~~follow~</p>
-<h4 id="文字环绕变身-三栏式布局-中间自适应"><a href="#文字环绕变身-三栏式布局-中间自适应" class="headerlink" title="文字环绕变身  三栏式布局  中间自适应"></a>文字环绕变身  三栏式布局  中间自适应</h4><p>float: left<br>float: right<br>text-align: center (用独立的div包起来)</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/27/知识点/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
