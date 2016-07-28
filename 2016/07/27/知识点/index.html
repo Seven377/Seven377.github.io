@@ -57,19 +57,16 @@
 
 
 
-<meta name="description" content="JavaScriptJS 控制 float 属性由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。
-LTFunction.setFloatStyle = fun">
+<meta name="description" content="JavaScriptJS 控制 float 属性由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。1234567891011121314151617181920">
 <meta property="og:type" content="article">
 <meta property="og:title" content="知识点">
 <meta property="og:url" content="http://yoursite.com/2016/07/27/知识点/index.html">
 <meta property="og:site_name" content="Seven">
-<meta property="og:description" content="JavaScriptJS 控制 float 属性由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。
-LTFunction.setFloatStyle = fun">
-<meta property="og:updated_time" content="2016-07-27T08:17:01.692Z">
+<meta property="og:description" content="JavaScriptJS 控制 float 属性由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。1234567891011121314151617181920">
+<meta property="og:updated_time" content="2016-07-28T13:09:50.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点">
-<meta name="twitter:description" content="JavaScriptJS 控制 float 属性由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。
-LTFunction.setFloatStyle = fun">
+<meta name="twitter:description" content="JavaScriptJS 控制 float 属性由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。1234567891011121314151617181920">
 
 
 
@@ -283,25 +280,10 @@ LTFunction.setFloatStyle = fun">
       
 
       
-        <h4 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h4><h5 id="JS-控制-float-属性"><a href="#JS-控制-float-属性" class="headerlink" title="JS 控制 float 属性"></a>JS 控制 float 属性</h5><p>由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。</p>
-<pre><code class="javascript">LTFunction.setFloatStyle = <span class="function"><span class="keyword">function</span>(<span class="params">obj,style</span>) </span>{ 
-    <span class="keyword">var</span> sty=obj.style; 
-    <span class="keyword">if</span>(<span class="string">'cssFloat'</span> <span class="keyword">in</span> sty){ 
-        obj.style.cssFloat=style; 
-    }<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">'styleFloat'</span> <span class="keyword">in</span> sty){ 
-        obj.style.styleFloat=style; 
-    }<span class="keyword">else</span>{ 
-        <span class="keyword">throw</span> <span class="string">'set float style:'</span>+style+<span class="string">'error.'</span>; 
-    } 
-}
-</code></pre>
-<a id="more"></a>
-<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><h4 id="文字环绕布局"><a href="#文字环绕布局" class="headerlink" title="文字环绕布局"></a>文字环绕布局</h4><p>float<br>~~follow~</p>
-<h4 id="文字环绕变身-三栏式布局-中间自适应"><a href="#文字环绕变身-三栏式布局-中间自适应" class="headerlink" title="文字环绕变身  三栏式布局  中间自适应"></a>文字环绕变身  三栏式布局  中间自适应</h4><p>float: left<br>float: right<br>text-align: center (用独立的div包起来)</p>
-<h4 id="文字环绕衍生-单侧固定"><a href="#文字环绕衍生-单侧固定" class="headerlink" title="文字环绕衍生   单侧固定"></a>文字环绕衍生   单侧固定</h4><p>左侧固定 右侧自适应:<br>左侧： width + float<br>右侧： padding-left/margin-left</p>
-<p>右侧固定 左侧自适应：<br>右侧： width + float(right)<br>左侧： padding-right/margin-right<br>但这样有个问题，就是在html 里要先写 float：right(右侧)元素，再写左侧元素，这与显示位置是相反的。</p>
-<p>若想 DOM 位置与显示位置一样，则使用以下方法：<br>在自适应的内容外加一个额外的标签。<br>额外加的标签： width: 100%; float:left;<br>自适应的内容： margin-right: 76px;<br>右边固定的内容： width: 56px; float: left; margin-left: -56px;</p>
-<h4 id="智能自适应尺寸-两侧都自适应"><a href="#智能自适应尺寸-两侧都自适应" class="headerlink" title="智能自适应尺寸  两侧都自适应"></a>智能自适应尺寸  两侧都自适应</h4><p>右边根据左边的宽度自动填满剩余区域<br>左侧： float<br>右侧： display: table-cell (IE8+)   display: inline-block (IE7)</p>
+        <h4 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h4><h5 id="JS-控制-float-属性"><a href="#JS-控制-float-属性" class="headerlink" title="JS 控制 float 属性"></a>JS 控制 float 属性</h5><p>由于 float 是 JavaScript 的保留字，因此不能直接使用 obj.style.float 。其正确的使用方法是：在 IE 下用 styleFloat， Firefox， chrome， Safari 用 cssFloat，可用 in 运算符去检测 style 是否包含此属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">LTFunction.setFloatStyle = <span class="function"><span class="keyword">function</span>(<span class="params">obj,style</span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> sty=obj.style; </span><br><span class="line">	<span class="keyword">if</span>(<span class="string">'cssFloat'</span> <span class="keyword">in</span> sty)&#123; </span><br><span class="line">		obj.style.cssFloat=style; </span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">'styleFloat'</span> <span class="keyword">in</span> sty)&#123; </span><br><span class="line">		obj.style.styleFloat=style; </span><br><span class="line">	&#125;<span class="keyword">else</span>&#123; </span><br><span class="line">		<span class="keyword">throw</span> <span class="string">'set float style:'</span>+style+<span class="string">'error.'</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="string">``</span><span class="string">` </span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">#### CSS</span><br><span class="line">##### 文字环绕布局</span><br><span class="line">float</span><br><span class="line">~~follow~</span><br><span class="line">#####  文字环绕变身  三栏式布局  中间自适应</span><br><span class="line">float: left</span><br><span class="line">float: right</span><br><span class="line">text-align: center (用独立的div包起来)</span><br><span class="line">##### 文字环绕衍生   单侧固定</span><br><span class="line">左侧固定 右侧自适应:</span><br><span class="line">左侧： width + float</span><br><span class="line">右侧： padding-left/margin-left</span><br><span class="line"></span><br><span class="line">右侧固定 左侧自适应：</span><br><span class="line">右侧： width + float(right)</span><br><span class="line">左侧： padding-right/margin-right</span><br><span class="line">但这样有个问题，就是在html 里要先写 float：right(右侧)元素，再写左侧元素，这与显示位置是相反的。</span><br><span class="line"></span><br><span class="line">若想 DOM 位置与显示位置一样，则使用以下方法：</span><br><span class="line">在自适应的内容外加一个额外的标签。</span><br><span class="line">额外加的标签： width: 100%; float:left;</span><br><span class="line">自适应的内容： margin-right: 76px;</span><br><span class="line">右边固定的内容： width: 56px; float: left; margin-left: -56px;</span><br><span class="line"></span><br><span class="line">##### 智能自适应尺寸  两侧都自适应</span><br><span class="line">右边根据左边的宽度自动填满剩余区域</span><br><span class="line">左侧： float</span><br><span class="line">右侧： display: table-cell (IE8+)   display: inline-block (IE7)</span><br><span class="line"></span><br><span class="line">#### jQuery</span><br><span class="line">##### 判断 IE6 浏览器</span><br><span class="line">jquery1.9之前使用以下代码:</span></span><br></pre></td></tr></table></figure></p>
+<p>if ($.browser.msie &amp;&amp; 7 &gt; $.browser.version) {}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">jquery1.9和之后使用以下代码:</span><br></pre></td></tr></table></figure></p>
+<p>if (‘undefined’ == typeof(document.body.style.maxHeight)) {}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">##### 判断 IE6-IE8 浏览器</span><br></pre></td></tr></table></figure></p>
+<p>if (!$.support.leadingWhitespace) {}<br>```</p>
 
       
     </div>
@@ -497,7 +479,7 @@ LTFunction.setFloatStyle = fun">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JS-控制-float-属性"><span class="nav-number">1.1.</span> <span class="nav-text">JS 控制 float 属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字环绕布局"><span class="nav-number">3.</span> <span class="nav-text">文字环绕布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字环绕变身-三栏式布局-中间自适应"><span class="nav-number">4.</span> <span class="nav-text">文字环绕变身  三栏式布局  中间自适应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文字环绕衍生-单侧固定"><span class="nav-number">5.</span> <span class="nav-text">文字环绕衍生   单侧固定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#智能自适应尺寸-两侧都自适应"><span class="nav-number">6.</span> <span class="nav-text">智能自适应尺寸  两侧都自适应</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript"><span class="nav-number">1.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JS-控制-float-属性"><span class="nav-number">1.1.</span> <span class="nav-text">JS 控制 float 属性</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
